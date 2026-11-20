@@ -1,0 +1,304 @@
+{
+  "stages": {
+    "initial": {
+      "GET /scales": {
+        "data": {
+          "streams": {
+            "farm-g": [
+              {
+                "offset": 0,
+                "bytes": 307,
+                "url": "/scales/farm/early"
+              },
+              {
+                "offset": 299,
+                "bytes": 279,
+                "url": "/scales/farm/late"
+              }
+            ],
+            "plant-k": [
+              {
+                "offset": 0,
+                "bytes": 303,
+                "url": "/scales/plant/first"
+              },
+              {
+                "offset": 303,
+                "bytes": 591,
+                "url": "/scales/plant/next"
+              }
+            ]
+          }
+        }
+      },
+      "GET /scales/farm/early": {
+        "type": "application/octet-stream",
+        "headers": {
+          "Content-Disposition": "attachment; filename=\"farm-a.ndjson\""
+        },
+        "base64": "eyJkZXZpY2UiOiJmYXJtIiwiYm9vdCI6ImczIiwibm8iOjEyLCJ0eXBlIjoiZ3Jvc3MiLCJjcmF0ZSI6IkMtMSIsImtnIjo1MS40Mywid2FsbCI6IjIwMjYtMTAtMTdUMjM6NTA6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0xIn0KeyJkZXZpY2UiOiJmYXJtIiwiYm9vdCI6ImczIiwibm8iOjEzLCJ0eXBlIjoiZ3Jvc3MiLCJjcmF0ZSI6IkMtMiIsImtnIjo0Ny4yMywid2FsbCI6IjIwMjYtMTAtMTdUMjM6NTM6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yIn0KeyJkZXZpY2UiOiJmYXJtIiwiYg=="
+      },
+      "GET /scales/farm/late": {
+        "status": 503,
+        "data": {
+          "message": "车已出场，待补传"
+        }
+      },
+      "GET /scales/plant/first": {
+        "type": "application/octet-stream",
+        "headers": {
+          "Content-Disposition": "attachment; filename=\"plant-a.ndjson\""
+        },
+        "base64": "eyJkZXZpY2UiOiJwbGFudCIsImJvb3QiOiJrNyIsIm5vIjoxMiwidHlwZSI6InRhcmUiLCJjcmF0ZSI6IkMtMSIsImtnIjo0LjA4LCJ3YWxsIjoiMjAyNi0xMC0xOFQwMDoyMzowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTEifQp7ImRldmljZSI6InBsYW50IiwiYm9vdCI6Ims3Iiwibm8iOjEzLCJ0eXBlIjoidGFyZSIsImNyYXRlIjoiQy0yIiwia2ciOjMuNzgsIndhbGwiOiIyMDI2LTEwLTE4VDAwOjI2OjAwKzA4OjAwIiwidHJ1Y2siOiJUOCIsIm1vdmVtZW50IjoiTVYtMiJ9CnsiZGV2aWNlIjoicGxhbnQi"
+      },
+      "GET /scales/plant/next": {
+        "status": 425,
+        "data": {
+          "message": "站端还有未确认的复称"
+        }
+      },
+      "GET /fleet/movements": {
+        "data": [
+          {
+            "id": "MV-1",
+            "type": "load",
+            "crate": "C-1",
+            "grower": "H1",
+            "truck": "T8",
+            "station": "farm"
+          },
+          {
+            "id": "MV-2",
+            "type": "load",
+            "crate": "C-2",
+            "grower": "H2",
+            "truck": "T8",
+            "station": "farm"
+          },
+          {
+            "id": "MV-3",
+            "type": "unload",
+            "crate": "C-1",
+            "source": "MV-1",
+            "truck": "T8",
+            "station": "plant"
+          },
+          {
+            "id": "MV-4",
+            "type": "load",
+            "crate": "C-1",
+            "grower": "H3",
+            "truck": "T9",
+            "station": "farm"
+          },
+          {
+            "id": "MV-5",
+            "type": "unload",
+            "crate": "C-2",
+            "source": "MV-2",
+            "truck": "T8",
+            "station": "plant"
+          }
+        ]
+      },
+      "GET /desk/approvals": {
+        "data": {
+          "rates": {
+            "H1": 2.65,
+            "H2": 2.65,
+            "H3": 2.8
+          },
+          "approved": []
+        }
+      }
+    },
+    "exchange": {
+      "GET /scales/farm/late": {
+        "type": "application/octet-stream",
+        "headers": {
+          "Content-Disposition": "attachment; filename=\"farm-b.ndjson\""
+        },
+        "base64": "ZmFybSIsImJvb3QiOiJnMyIsIm5vIjoxMywidHlwZSI6InJlcHJpbnQiLCJjcmF0ZSI6IkMtMiIsImtnIjo0Ny4yMywid2FsbCI6IjIwMjYtMTAtMThUMDA6MDE6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yIn0KeyJkZXZpY2UiOiJmYXJtIiwiYm9vdCI6Imc0Iiwibm8iOjEyLCJ0eXBlIjoiZ3Jvc3MiLCJjcmF0ZSI6IkMtMSIsImtnIjozMy43Niwid2FsbCI6IjIwMjYtMTAtMThUMDA6NDU6MDArMDg6MDAiLCJ0cnVjayI6IlQ5IiwibW92ZW1lbnQiOiJNVi00In0K"
+      },
+      "GET /fleet/movements": {
+        "data": [
+          {
+            "id": "MV-1",
+            "type": "load",
+            "crate": "C-1",
+            "grower": "H1",
+            "truck": "T8",
+            "station": "farm"
+          },
+          {
+            "id": "MV-2",
+            "type": "load",
+            "crate": "C-2",
+            "grower": "H2",
+            "truck": "T8",
+            "station": "farm"
+          },
+          {
+            "id": "MV-3",
+            "type": "unload",
+            "crate": "C-1",
+            "source": "MV-1",
+            "truck": "T8",
+            "station": "plant"
+          },
+          {
+            "id": "MV-4",
+            "type": "load",
+            "crate": "C-1",
+            "grower": "H3",
+            "truck": "T9",
+            "station": "farm"
+          },
+          {
+            "id": "MV-5",
+            "type": "unload",
+            "crate": "C-2",
+            "source": "MV-2",
+            "truck": "T8",
+            "station": "plant"
+          },
+          {
+            "id": "MV-2B",
+            "type": "exchange",
+            "source": "MV-2",
+            "old": "C-2",
+            "new": "C-7",
+            "truck": "T8",
+            "station": "plant",
+            "wall": "2026-10-18T00:24:30+08:00"
+          }
+        ]
+      },
+      "GET /scales": {
+        "data": {
+          "streams": {
+            "farm-g": [
+              {
+                "offset": 0,
+                "bytes": 307,
+                "url": "/scales/farm/early"
+              },
+              {
+                "offset": 299,
+                "bytes": 279,
+                "url": "/scales/farm/late"
+              }
+            ],
+            "plant-k": [
+              {
+                "offset": 0,
+                "bytes": 303,
+                "url": "/scales/plant/first"
+              },
+              {
+                "offset": 303,
+                "bytes": 431,
+                "url": "/scales/plant/next"
+              }
+            ]
+          }
+        }
+      },
+      "GET /scales/plant/next": {
+        "type": "application/octet-stream",
+        "headers": {
+          "Content-Disposition": "attachment; filename=\"plant-b.ndjson\""
+        },
+        "base64": "LCJib290IjoiazciLCJubyI6MTgsInR5cGUiOiJ0YXJlIiwiY3JhdGUiOiJDLTciLCJrZyI6NC40NSwid2FsbCI6IjIwMjYtMTAtMThUMDA6MjY6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yQiJ9CnsiZGV2aWNlIjoicGxhbnQiLCJib290IjoiazciLCJubyI6MTksInR5cGUiOiJncm9zcyIsImNyYXRlIjoiQy03Iiwia2ciOjQ4LjA3LCJ3YWxsIjoiMjAyNi0xMC0xOFQwMDoyNTowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTJCIn0KeyJkZXZpY2UiOiJwbGFudCIsImJvb3QiOiJrNyIsIm5vIjoyMCwidHlwZSI6InZvaWQiLCJjcmF0ZSI6IkMtNyIsImtnIjpudWxsLCJ3YWxsIjoiMjAyNi0xMC0xOFQwMjo0MDowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTJCIiwicmVwbGFjZXMiOjE5fQo="
+      }
+    },
+    "reviewed": {
+      "GET /scales/farm/late": {
+        "type": "application/octet-stream",
+        "headers": {
+          "Content-Disposition": "attachment; filename=\"farm-b.ndjson\""
+        },
+        "base64": "ZmFybSIsImJvb3QiOiJnMyIsIm5vIjoxMywidHlwZSI6InJlcHJpbnQiLCJjcmF0ZSI6IkMtMiIsImtnIjo0Ny4yMywid2FsbCI6IjIwMjYtMTAtMThUMDA6MDE6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yIn0KeyJkZXZpY2UiOiJmYXJtIiwiYm9vdCI6Imc0Iiwibm8iOjEyLCJ0eXBlIjoiZ3Jvc3MiLCJjcmF0ZSI6IkMtMSIsImtnIjozMy43Niwid2FsbCI6IjIwMjYtMTAtMThUMDA6NDU6MDArMDg6MDAiLCJ0cnVjayI6IlQ5IiwibW92ZW1lbnQiOiJNVi00In0K"
+      },
+      "GET /fleet/movements": {
+        "data": [
+          {
+            "id": "MV-1",
+            "type": "load",
+            "crate": "C-1",
+            "grower": "H1",
+            "truck": "T8",
+            "station": "farm"
+          },
+          {
+            "id": "MV-2",
+            "type": "load",
+            "crate": "C-2",
+            "grower": "H2",
+            "truck": "T8",
+            "station": "farm"
+          },
+          {
+            "id": "MV-3",
+            "type": "unload",
+            "crate": "C-1",
+            "source": "MV-1",
+            "truck": "T8",
+            "station": "plant"
+          },
+          {
+            "id": "MV-4",
+            "type": "load",
+            "crate": "C-1",
+            "grower": "H3",
+            "truck": "T9",
+            "station": "farm"
+          },
+          {
+            "id": "MV-5",
+            "type": "unload",
+            "crate": "C-2",
+            "source": "MV-2",
+            "truck": "T8",
+            "station": "plant"
+          },
+          {
+            "id": "MV-2B",
+            "type": "exchange",
+            "source": "MV-2",
+            "old": "C-2",
+            "new": "C-7",
+            "truck": "T8",
+            "station": "plant",
+            "wall": "2026-10-18T00:24:30+08:00"
+          }
+        ]
+      },
+      "GET /scales/plant/next": {
+        "type": "application/octet-stream",
+        "headers": {
+          "Content-Disposition": "attachment; filename=\"plant-b.ndjson\""
+        },
+        "base64": "LCJib290IjoiazciLCJubyI6MTgsInR5cGUiOiJ0YXJlIiwiY3JhdGUiOiJDLTciLCJrZyI6NC40NSwid2FsbCI6IjIwMjYtMTAtMThUMDA6MjY6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yQiJ9CnsiZGV2aWNlIjoicGxhbnQiLCJib290IjoiazciLCJubyI6MTksInR5cGUiOiJncm9zcyIsImNyYXRlIjoiQy03Iiwia2ciOjQ4LjA3LCJ3YWxsIjoiMjAyNi0xMC0xOFQwMDoyNTowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTJCIn0KeyJkZXZpY2UiOiJwbGFudCIsImJvb3QiOiJrNyIsIm5vIjoyMCwidHlwZSI6InZvaWQiLCJjcmF0ZSI6IkMtNyIsImtnIjpudWxsLCJ3YWxsIjoiMjAyNi0xMC0xOFQwMjo0MDowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTJCIiwicmVwbGFjZXMiOjE5fQp7ImRldmljZSI6InBsYW50IiwiYm9vdCI6Ims3Iiwibm8iOjIxLCJ0eXBlIjoiZ3Jvc3MiLCJjcmF0ZSI6IkMtNyIsImtnIjo0Ny45NCwid2FsbCI6IjIwMjYtMTAtMThUMDI6NDE6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yQiIsInJlcGxhY2VzIjoxOX0K"
+      },
+      "GET /desk/approvals": {
+        "data": {
+          "rates": {
+            "H1": 2.65,
+            "H2": 2.65,
+            "H3": 2.8
+          },
+          "approved": [
+            {
+              "device": "plant",
+              "boot": "k7",
+              "no": 21,
+              "supersedes": 19,
+              "approvedBy": "收购员乙"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
