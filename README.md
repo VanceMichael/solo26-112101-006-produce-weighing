@@ -11,3 +11,7 @@
 `data/sources.json` 保存原始报文及站点页面。连续响应由来源按同一进程内的观察次数提供。阶段从 `initial` 启动，本地演练人员可用 `POST /scenario/阶段名` 切换，未覆盖的路由延用初始响应。切换不清空来源的请求记录。重开服务会复位。
 
 执行 `npm test` 核对来源契约。依赖锁仅包含 Node.js 标准库运行所需的项目清单。容器方式可先执行 `docker build -t produce-weighing-sources .`，再执行 `docker run --rm produce-weighing-sources`。镜像准备完成后的验证不需要外网。
+
+## 留存确认
+
+对站端确认 `POST /scales/farm/ack` 发送流号和半开区间终点 `through`。确认端点取最后一份可以在柜面独立重放的完整票后面的字节位置。站端也可自行报告由于滑动缓存而丢失的区间。 `GET /scales/retention` 返回分流留存起点，收到响应超时后可查站端实际应用到哪。确认只表示站端原始传输交付，后续柜面仍按票据业务规则审核。

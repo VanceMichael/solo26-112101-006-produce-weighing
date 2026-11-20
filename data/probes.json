@@ -91,5 +91,33 @@
       ],
       "value": 19
     }
+  },
+  {
+    "path": "/scales/farm/ack",
+    "stage": "initial",
+    "method": "POST",
+    "status": 504,
+    "expected": {
+      "path": [
+        "message"
+      ],
+      "value": "设备确认延迟"
+    },
+    "body": {
+      "stream": "farm-g",
+      "through": 288
+    }
+  },
+  {
+    "path": "/scales/retention",
+    "stage": "exchange",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "farm-g"
+      ],
+      "value": 288
+    }
   }
 ]

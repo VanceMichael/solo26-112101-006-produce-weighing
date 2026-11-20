@@ -110,6 +110,18 @@
           },
           "approved": []
         }
+      },
+      "GET /scales/retention": {
+        "data": {
+          "farm-g": 0,
+          "plant-k": 0
+        }
+      },
+      "POST /scales/farm/ack": {
+        "status": 504,
+        "data": {
+          "message": "设备确认延迟"
+        }
       }
     },
     "exchange": {
@@ -210,6 +222,12 @@
           "Content-Disposition": "attachment; filename=\"plant-b.ndjson\""
         },
         "base64": "LCJib290IjoiazciLCJubyI6MTgsInR5cGUiOiJ0YXJlIiwiY3JhdGUiOiJDLTciLCJrZyI6NC40NSwid2FsbCI6IjIwMjYtMTAtMThUMDA6MjY6MDArMDg6MDAiLCJ0cnVjayI6IlQ4IiwibW92ZW1lbnQiOiJNVi0yQiJ9CnsiZGV2aWNlIjoicGxhbnQiLCJib290IjoiazciLCJubyI6MTksInR5cGUiOiJncm9zcyIsImNyYXRlIjoiQy03Iiwia2ciOjQ4LjA3LCJ3YWxsIjoiMjAyNi0xMC0xOFQwMDoyNTowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTJCIn0KeyJkZXZpY2UiOiJwbGFudCIsImJvb3QiOiJrNyIsIm5vIjoyMCwidHlwZSI6InZvaWQiLCJjcmF0ZSI6IkMtNyIsImtnIjpudWxsLCJ3YWxsIjoiMjAyNi0xMC0xOFQwMjo0MDowMCswODowMCIsInRydWNrIjoiVDgiLCJtb3ZlbWVudCI6Ik1WLTJCIiwicmVwbGFjZXMiOjE5fQo="
+      },
+      "GET /scales/retention": {
+        "data": {
+          "farm-g": 288,
+          "plant-k": 0
+        }
       }
     },
     "reviewed": {
@@ -297,6 +315,12 @@
               "approvedBy": "收购员乙"
             }
           ]
+        }
+      },
+      "GET /scales/retention": {
+        "data": {
+          "farm-g": 288,
+          "plant-k": 0
         }
       }
     }
