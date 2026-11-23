@@ -8,6 +8,8 @@
   },
   "scripts": {
     "sources": "node sources/server.mjs",
+    "desk": "node src/cli.mjs",
+    "desk:server": "node src/server.mjs",
     "test": "node --test test/*.test.mjs"
   }
 }
